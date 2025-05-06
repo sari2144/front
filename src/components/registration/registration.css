@@ -1,0 +1,200 @@
+/* Registration Container */
+.registration-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .registration-paper {
+    border-radius: 1rem;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #f5f5f5, #ffffff);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+  
+  /* Form Section */
+  .form-section {
+    padding: 2rem;
+  }
+  
+  .form-title {
+    margin-bottom: 2rem;
+    color: #5d4037;
+    font-weight: bold;
+    text-align: right;
+  }
+  
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-field {
+    margin-bottom: 1rem;
+    direction: rtl;
+  }
+  
+  .input-field .MuiOutlinedInput-root fieldset {
+    border-color: #e0e0e0;
+    border-radius: 0.5rem;
+  }
+  
+  .input-field .MuiOutlinedInput-root:hover fieldset {
+    border-color: #a5d6a7;
+  }
+  
+  .input-field .MuiOutlinedInput-root.Mui-focused fieldset {
+    border-color: #f9a825;
+  }
+  
+  .input-field .MuiInputLabel-root {
+    color: #5d4037;
+  }
+  
+  .input-field .MuiInputLabel-root.Mui-focused {
+    color: #f9a825;
+  }
+  
+  .input-field .MuiInputBase-input {
+    color: #5d4037;
+  }
+  
+  .country-select {
+    margin-bottom: 1rem;
+  }
+  
+  .submit-button {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background: linear-gradient(45deg, #f9a825 30%, #a5d6a7 90%);
+    color: white;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(249, 168, 37, 0.25);
+  }
+  
+  .submit-button:hover {
+    background: linear-gradient(45deg, #f57f17 30%, #81c784 90%);
+    box-shadow: 0 6px 20px rgba(249, 168, 37, 0.4);
+  }
+  
+  /* Image Section */
+  .image-section {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  .image-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url("https://images.unsplash.com/photo-1507692049790-de58290a4334?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 0;
+  }
+  
+  .image-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+  
+  .welcome-title {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #5d4037;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .welcome-text {
+    color: #5d4037;
+    text-align: center;
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+  
+  /* Chani Logo */
+  .chani-logo {
+    text-align: center;
+    padding: 1rem;
+    color: #5d4037;
+    font-family: 'Playfair Display, serif';
+  }
+  
+  .logo-title {
+    font-weight: bold;
+    letter-spacing: 1px;
+    background: linear-gradient(145deg, #a5d6a7 0%, #f9a825 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+  }
+  
+  .logo-subtitle {
+    color: #5d4037;
+    font-style: italic;
+  }
+  
+  .logo-icon-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .logo-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f9a825 0%, #a5d6a7 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: relative;
+  }
+  
+  .logo-icon::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.6;
+  }
+  
+  .logo-icon::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #5d4037;
+    top: 30%;
+    left: 30%;
+  }
+  
+  .logo-initials {
+    position: relative;
+    font-weight: bold;
+    font-size: 20px;
+    color: #faf3f1;
+    z-index: 2;
+  }
+
+  
+  

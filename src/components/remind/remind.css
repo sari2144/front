@@ -1,0 +1,9 @@
+
+.qs{
+
+    width: 20%;
+    /* height: 30vh; */
+    border: rgb(47, 255, 57) 3px solid;
+    border-radius: 5px;
+    text-align: center;
+}

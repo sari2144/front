@@ -1,0 +1,33 @@
+/* בס"ד */
+
+/* Animation for scroll down indicator */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* RTL Support */
+.home-page {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .hero-section {
+    min-height: 80vh;
+    padding: 20px 10px;
+  }
+}
