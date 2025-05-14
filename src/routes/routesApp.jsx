@@ -5,14 +5,15 @@ import { Login } from "../components/login/login"
 import MonthView from "../components/calendar/MonthView"
 import WeekView from "../components/calendar/WeekView"
 import { Registration } from "../components/registration/registration"
-import {HomePage } from "../components/home/home"
+// import { HomePage } from '../components/home/Home'
 import { DayView } from "../components/DayView/dayView"
-import { Calendar} from '../components/calendar/Calendar'
+// import { Calendar} from '../components/calendar/Calendar'
 import { AddQueue } from "../components/addQueue/addQueue"
 import { SearchQueue } from "../components/search/searchQueue"
 import { RemindOffQueue } from "../components/remindOffQueue/remindOffQueue"
 import { Remind } from "../components/remind/remind"
 import { Manager } from "../components/manager/manager"
+import Calendar from "../components/calendar/Calendar"
 
 
 
@@ -32,7 +33,7 @@ export const Routing = () => {
             <Route path="registration/:username/:password" element={<Registration/>}></Route>
             <Route path="login" element={<Login/>}></Route>
             <Route path="remind" element={<Remind/>}></Route>
-            <Route path="home" element={<HomePage/>}></Route>
+            {/* <Route path="home" element={<HomePage/>}></Route> */}
         </Routes>
     </>
 }

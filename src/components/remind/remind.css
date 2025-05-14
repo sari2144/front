@@ -1,9 +1,47 @@
+  /* בס"ד */
 
-.qs{
+/* Animation keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
-    width: 20%;
-    /* height: 30vh; */
-    border: rgb(47, 255, 57) 3px solid;
-    border-radius: 5px;
-    text-align: center;
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Apply animations */
+.remind-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.remind-header {
+    animation: slideUp 0.5s ease-out;
+}
+
+.remind-card {
+    animation: slideUp 0.5s ease-out;
+}
+
+.remind-card:hover {
+    animation: pulse 1s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .remind-title {
+        font-size: 1.5rem;
+    }
+    
+    .remind-icon {
+        width: 50px;
+        height: 50px;
+    }
 }

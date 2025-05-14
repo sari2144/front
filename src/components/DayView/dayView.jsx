@@ -176,3 +176,5 @@ export const DayView = (props) => {
         <button onClick={() => setMonthName("")}>close</button>
     </dialog>
 }
+
+export default DayView;
