@@ -1,18 +1,287 @@
 /* בס"ד */
 
-.menue{
-    width: 100%;
-    height: 9vh;
-    border: 3px solid rgb(78, 183, 118);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
+/* משתני צבע */
+:root {
+    --primary-green: #4CAF50;
+    --light-green: #8BC34A;
+    --dark-green: #2E7D32;
+    --accent-green: #00C853;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --gray: #e0e0e0;
+    --dark-gray: #333333;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
 }
 
-.link{
-    background-color: rgb(234, 196, 185);
-    flex-grow: 1;
-    width: 20%;
-    font-size: x-large;
+/* עיצוב כללי של התפריט */
+.menu-container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    direction: rtl;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 70px;
+}
+
+/* אפקט גלילה */
+.menu.scrolled {
+    padding: 6px 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    height: 60px;
+}
+
+/* עיצוב הלוגו */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 160px;
+    height: 100%;
+}
+
+/* מעטפת ללוגו של ChaniLogo */
+.menu-logo-wrapper {
+    height: 50px;
+    width: 50px; /* הגדרת רוחב קבוע */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    transform: scale(0.35); /* הקטנה משמעותית של יחס הקנה מידה */
+    transform-origin: center center; /* מרכוז נקודת המקור */
+    overflow: hidden; /* חיתוך חלקים שחורגים */
+}
+
+.scrolled .menu-logo-wrapper {
+    transform: scale(0.3);
+    height: 45px;
+    width: 45px;
+}
+
+/* התאמות ספציפיות לקומפוננטת ChaniLogo */
+.menu-logo-wrapper svg {
+    height: auto;
+    width: auto;
+    max-width: 200%; /* אפשר ללוגו להיות גדול יותר מהמעטפת */
+    max-height: 200%;
+    transform-origin: center center;
+}
+
+.logo-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-green);
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.scrolled .logo-text {
+    font-size: 0.95rem;
+}
+
+/* עיצוב התפריט */
+.menu-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 100%;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--dark-gray);
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+    font-size: 0.9rem;
+    height: 38px;
+}
+
+.menu-item:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-green);
+    transform: translateY(-1px);
+}
+
+.menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-green);
+    transition: var(--transition);
+}
+
+.menu-item:hover::after {
+    width: 100%;
+}
+
+/* עיצוב האייקונים החדשים */
+.menu-icon {
+    font-size: 0.95rem;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-green);
+    transition: var(--transition);
+}
+
+.menu-item:hover .menu-icon {
+    color: var(--primary-green);
+    transform: scale(1.05);
+}
+
+.menu-item .text {
+    font-size: 0.9rem;
+}
+
+/* כפתור תפריט למובייל */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--dark-green);
+    border-radius: 1px;
+    transition: var(--transition);
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 850px) {
+    .menu {
+      padding: 6px 15px;
+      height: 60px;
+    }
+  
+    .scrolled .menu {
+      height: 55px;
+    }
+  
+    .mobile-menu-toggle {
+      display: flex;
+    }
+  
+    .menu-links {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      flex-direction: column;
+      background-color: var(--white);
+      box-shadow: var(--shadow);
+      padding: 12px;
+      gap: 10px;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      height: auto;
+    }
+  
+    .menu-links.open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    .menu-item {
+      width: 100%;
+      justify-content: center;
+      padding: 8px 10px;
+    }
+  
+    .mobile-open .mobile-menu-toggle span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+  
+    .mobile-open .mobile-menu-toggle span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .mobile-open .mobile-menu-toggle span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  
+    .logo-text {
+      font-size: 0.9rem;
+    }
+  
+    /* התאמת גודל הלוגו במובייל */
+    .menu-logo-wrapper {
+      transform: scale(0.3);
+      height: 45px;
+      width: 45px;
+    }
+  
+    .scrolled .menu-logo-wrapper {
+      transform: scale(0.25);
+      height: 40px;
+      width: 40px;
+    }
+  
+    .logo-container {
+      min-width: 140px;
+      gap: 8px;
+    }
+}
+
+/* אנימציות והדגשות */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.menu-item:active {
+    background-color: var(--light-green);
+    color: var(--white);
+    animation: pulse 0.2s ease;
+}
+
+.menu-item:active .menu-icon {
+    color: var(--white);
+}
+
+/* עיצוב מיוחד לפריט פעיל */
+.menu-item.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+}
+
+.menu-item.active .menu-icon {
+    color: var(--white);
+}
+
+.menu-item.active::after {
+    width: 100%;
+    background-color: var(--white);
 }

@@ -7,7 +7,7 @@ export const deleteFullAq = createAsyncThunk(
    
     'deleteFullAq',
     async ({startH , startM , date}) => { debugger
-        const response = await fetch(`https://172.16.17.6:7215/api/AvialableQueue/deleteFullAq/${startH}/${startM}/${date}`,
+        const response = await fetch(`https://localhost:7215/api/AvialableQueue/deleteFullAq/${startH}/${startM}/${date}`,
         {
             method:'DELETE',
             body:JSON.stringify(''),

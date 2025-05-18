@@ -6,7 +6,7 @@ export const determineQueue = createAsyncThunk(
     'determineQueue',
     async (newQ) => {
         debugger
-        const response = await fetch('https://172.16.17.6:7215/api/Queue/add',
+        const response = await fetch('https://localhost:7215/api/Queue/add',
         {
             method:'POST',
             body:JSON.stringify(newQ),
