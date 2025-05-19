@@ -7,8 +7,9 @@ import { ClinicSlice } from "./slices/clinicSlice/clinicSlice";
 import { DoctorSlice } from "./slices/doctorSlice/doctorSlice";
 import { AllDataSlice } from "./slices/allDataSlice/allDataSlice";
 import { WorkingTimeSlice } from "./slices/workingTimeSlice/workingTimeSlice";
+import { ArchiveSlice } from "./slices/archiveSlice/archiveSlice";
 
-const reducer = combineSlices(QueuesSlice , PatientSlice , ClinicSlice , DoctorSlice , AllDataSlice ,WorkingTimeSlice);
+const reducer = combineSlices(QueuesSlice , PatientSlice , ClinicSlice , DoctorSlice , AllDataSlice ,WorkingTimeSlice , ArchiveSlice);
 
 export const STORE = configureStore({
     reducer: reducer
