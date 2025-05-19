@@ -166,7 +166,7 @@ export const Login = () => {
     try {
       let res = await dispatch(getPatientByIdThunk(password))
       console.log(res)
-    
+    debugger
       if(res.payload !== undefined){
         navi('/ccc')
       } else {
@@ -190,37 +190,47 @@ export const Login = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '40px 20px'
+      padding: '40px 20px',
+      overflow: 'hidden'
     }}>
-      <Paper elevation={3} className="login-paper" sx={{ 
-        overflow: 'hidden', 
-        borderRadius: '16px',
-        width: '100%',
-        maxWidth: '1000px'
-      }}>
-        <Grid container>
+<Paper elevation={3} className="login-paper" sx={{ 
+  overflow: 'hidden', 
+  borderRadius: '16px',
+  width: '100%',
+  maxWidth: '1000px',
+  display: 'flex',
+  flexDirection: { xs: 'column', md: 'row-reverse' }
+}}>
+ 
+<Grid container sx={{ height: '100%' }}>
+
           {/* Form Section */}
           <Grid item xs={12} md={7} className="form-section" sx={{ 
-            padding: '40px 30px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center'
-          }}>
-            <Typography variant="h5" className="form-title" sx={{
-              marginBottom: '30px',
-              fontWeight: 'bold',
-              position: 'relative',
-              '&:after': {
-                content: '""',
-                position: 'absolute',
-                bottom: '-10px',
-                right: '0',
-                width: '80px',
-                height: '4px',
-                background: 'linear-gradient(90deg, #4CAF50, #81C784)',
-                borderRadius: '2px'
-              }
-            }}>
+  padding: '40px 30px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  order: { xs: 2, md: 1 } // שינוי כאן - במקום md: 1 שמנו md: 2
+}}>
+
+
+<Typography variant="h5" className="form-title" sx={{
+  marginBottom: '30px',
+  fontWeight: 'bold',
+  textAlign: 'right', // הוספה - יישור לימין
+  position: 'relative',
+  '&:after': {
+    content: '""',
+    position: 'absolute',
+    bottom: '-10px',
+    right: '0',
+    width: '80px',
+    height: '4px',
+    background: 'linear-gradient(90deg, #4CAF50, #81C784)',
+    borderRadius: '2px'
+  }
+}}>
+
               התחברות למערכת
             </Typography>
             
@@ -315,20 +325,27 @@ export const Login = () => {
           </Grid>
           
           {/* Image Section */}
+          
           <Grid item xs={12} md={5} className="image-section" sx={{
-            backgroundImage: 'url("/images/trees.jpg")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundBlendMode: 'overlay',
-            backgroundColor: 'rgba(220, 255, 220, 0.85)', // Green overlay
-            borderRadius: '0 4px 4px 0',
-            position: 'relative',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '20px'
-          }}>
+  backgroundImage: 'url("/images/trees.jpg")',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundBlendMode: 'overlay',
+  backgroundColor: 'rgba(220, 255, 220, 0.85)',
+  borderRadius: { xs: '0 0 16px 16px', md: '16px 0 0 16px' }, // שינוי כאן - התאמת הפינות המעוגלות לצד שמאל
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '20px',
+  minHeight: { xs: '300px', md: 'auto' },
+  order: { xs: 1, md: 2 } // שינוי כאן - מ-md: 1 ל-md: 2
+}}>
+
+
+
+
             <Box className="image-content">
               <ChaniLogo />
               <Typography variant="h5" className="welcome-title" sx={{

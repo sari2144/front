@@ -6,7 +6,7 @@ export const addPatientThunk = createAsyncThunk(
     'addPatientThunk',
     async (patient) => {
         debugger
-        const response = await fetch('https://172.16.17.6:7215/api/Patient/add',
+        const response = await fetch('https://localhost:7215/api/Patient/add',
         {
             method:'POST',
             body:JSON.stringify(patient),

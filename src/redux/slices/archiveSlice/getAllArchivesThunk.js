@@ -1,11 +1,11 @@
-//בס"ד
+//ס"ד
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const getAllDoctorThunk = createAsyncThunk(
-    'getAllDoctorThunk',
+export const getAllArchiveThunk = createAsyncThunk(
+    'getAllArchiveThunk',
     async()=>{
-        const response = await fetch('https://localhost:7215/api/Doctor/getAll');
+        const response = await fetch('https://localhost:7215/api/Archive/getAll');
         debugger
         const data = await response.json();
         console.log(data); 

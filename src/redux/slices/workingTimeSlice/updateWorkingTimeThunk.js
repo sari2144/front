@@ -8,7 +8,7 @@ export const updateWorkingTimeThunk = createAsyncThunk(
     'updateWorkingTimeThunk',
     async (q) => {
         debugger
-        const response = await fetch('https://172.16.17.6:7215/api/WorkingTime/update',
+        const response = await fetch('https://localhost:7215/api/WorkingTime/update',
         {
         method:'PUT',
         body:JSON.stringify(q),

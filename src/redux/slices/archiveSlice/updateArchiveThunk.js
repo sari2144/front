@@ -3,15 +3,15 @@
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const updateQueueThunk = createAsyncThunk(
+export const updateArchiveThunk = createAsyncThunk(
    
-    'updateQueueThunk',
-    async (q) => {
+    'updateArchiveThunk',
+    async (archiveQ) => {
         debugger
-        const response = await fetch('https://localhost:7215/api/Queue/update',
+        const response = await fetch('https://localhost:7215/api/Archive/update',
         {
         method:'PUT',
-        body:JSON.stringify(q),
+        body:JSON.stringify(archiveQ),
         headers:{
             'Content-type': 'application/json'
         }}

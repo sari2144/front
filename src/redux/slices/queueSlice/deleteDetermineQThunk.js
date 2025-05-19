@@ -7,7 +7,7 @@ export const deleteDetermineQThunk = createAsyncThunk(
    
     'deleteDetermineQThunk',
     async ({q,backToAvialable}) => { debugger
-        const response = await fetch(`https://172.16.17.6:7215/api/Queue/cancelQueue/${backToAvialable}`,
+        const response = await fetch(`https://localhost:7215/api/Queue/cancelQueue/${backToAvialable}`,
         {
         method:'DELETE',
         body:JSON.stringify(q),

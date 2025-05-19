@@ -15,7 +15,7 @@ export const SearchAvialableQueuesThunk = createAsyncThunk(
         if (date == '')
             doctorName = '01-01-2020'
         debugger
-        const response = await fetch(`https://172.16.17.6:7215/api/AvialableQueue/getByCondition/${id}/${dayWeek}/${doctorName}/${city}/${minHour}/${maxHour}/${date}/${isDouble}`);
+        const response = await fetch(`https://localhost:7215/api/AvialableQueue/getByCondition/${id}/${dayWeek}/${doctorName}/${city}/${minHour}/${maxHour}/${date}/${isDouble}`);
         const data = await response.json();
         console.log(data);
         return data;
