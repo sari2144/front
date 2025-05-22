@@ -1,33 +1,51 @@
 /* בס"ד */
 
-/* Animation for scroll down indicator */
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-20px);
-  }
-  60% {
-    transform: translateY(-10px);
-  }
+/* Animation keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* RTL Support */
-.home-page {
-  direction: rtl;
-  text-align: right;
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Apply animations */
+.home-container {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.welcome-section {
+  animation: slideUp 0.5s ease-out;
+}
+
+.action-button:hover {
+  animation: pulse 1s infinite;
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
-  .hero-section {
-    min-height: 80vh;
-    padding: 20px 10px;
+@media (max-width: 768px) {
+  .welcome-title {
+      font-size: 2rem;
+  }
+    
+  .welcome-subtitle {
+      font-size: 1rem;
+  }
+    
+  .action-buttons {
+      flex-direction: column;
+      gap: 16px;
+  }
+    
+  .action-button {
+      width: 100%;
   }
 }

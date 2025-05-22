@@ -1,0 +1,27 @@
+/* בס"ד */
+
+/* סגנונות עבור תצוגת חודש */
+.month-view-container {
+  width: 100%;
+}
+
+.day-cell {
+  transition: all 0.3s ease;
+}
+
+.day-cell:hover {
+  transform: translateY(-3px);
+}
+
+.hebrew-date {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.appointment-indicator {
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
