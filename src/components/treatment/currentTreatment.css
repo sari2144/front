@@ -1,0 +1,40 @@
+/* בס"ד */
+
+.current-treatment-page {
+  direction: rtl;
+}
+
+/* Animation for recording pulse effect */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(244, 67, 54, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 67, 54, 0);
+  }
+}
+
+/* Make sure form elements have proper RTL support */
+.MuiFormControl-root {
+  text-align: right;
+}
+
+.MuiInputLabel-root {
+  right: 0;
+  left: auto;
+  transform-origin: top right;
+}
+
+.MuiInputBase-input {
+  text-align: right;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .current-treatment-page {
+    padding: 16px 8px;
+  }
+}

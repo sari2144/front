@@ -267,7 +267,7 @@ export const Login = () => {
     try {
       let res = await dispatch(getPatientByIdThunk(password))
       console.log(res)
-    
+    debugger
       if(res.payload !== undefined){
         navi('/ccc')
       } else {
@@ -328,6 +328,7 @@ export const Login = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+
       background: `linear-gradient(135deg, ${colors.background} 0%, ${alpha(colors.tertiary, 0.7)} 100%)`,
       position: 'relative',
       overflow: 'hidden',
@@ -355,6 +356,67 @@ export const Login = () => {
             }}>
               <ModernLogo />
             </Box>
+
+      padding: '40px 20px',
+      overflow: 'hidden'
+    }}>
+<Paper elevation={3} className="login-paper" sx={{ 
+  overflow: 'hidden', 
+  borderRadius: '16px',
+  width: '100%',
+  maxWidth: '1000px',
+  display: 'flex',
+  flexDirection: { xs: 'column', md: 'row-reverse' }
+}}>
+ 
+<Grid container sx={{ height: '100%' }}>
+
+          {/* Form Section */}
+          <Grid item xs={12} md={7} className="form-section" sx={{ 
+  padding: '40px 30px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  order: { xs: 2, md: 1 } // שינוי כאן - במקום md: 1 שמנו md: 2
+}}>
+
+
+<Typography variant="h5" className="form-title" sx={{
+  marginBottom: '30px',
+  fontWeight: 'bold',
+  textAlign: 'right', // הוספה - יישור לימין
+  position: 'relative',
+  '&:after': {
+    content: '""',
+    position: 'absolute',
+    bottom: '-10px',
+    right: '0',
+    width: '80px',
+    height: '4px',
+    background: 'linear-gradient(90deg, #4CAF50, #81C784)',
+    borderRadius: '2px'
+  }
+}}>
+
+              התחברות למערכת
+            </Typography>
+            
+            {error && (
+              <Typography 
+                className="error-message" 
+                color="error" 
+                sx={{ 
+                  marginBottom: '20px',
+                  backgroundColor: 'rgba(211, 47, 47, 0.1)',
+                  padding: '10px 15px',
+                  borderRadius: '8px',
+                  textAlign: 'center'
+                }}
+              >
+                {error}
+              </Typography>
+            )}
+
             
             {/* Main content */}
             <Grid container spacing={4} justifyContent="center">
@@ -465,6 +527,7 @@ export const Login = () => {
                 </Fade>
               )}
               
+
               {/* Login form - visible when in login mode */}
               {loginMode && (
                 <Grid item xs={12} sm={10} md={8} lg={6}>
@@ -627,6 +690,56 @@ export const Login = () => {
               <Typography variant="body2" sx={{
                 color: colors.textLight,
                 fontSize: '0.75rem',
+
+              <Typography variant="body2" sx={{ 
+                marginTop: '20px', 
+                textAlign: 'center',
+                color: '#555'
+              }}>
+                אין לך חשבון? התחבר ותירשם אוטומטית
+              </Typography>
+            </Box>
+          </Grid>
+          
+          {/* Image Section */}
+          
+          <Grid item xs={12} md={5} className="image-section" sx={{
+  backgroundImage: 'url("/images/trees.jpg")',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundBlendMode: 'overlay',
+  backgroundColor: 'rgba(220, 255, 220, 0.85)',
+  borderRadius: { xs: '0 0 16px 16px', md: '16px 0 0 16px' }, // שינוי כאן - התאמת הפינות המעוגלות לצד שמאל
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '20px',
+  minHeight: { xs: '300px', md: 'auto' },
+  order: { xs: 1, md: 2 } // שינוי כאן - מ-md: 1 ל-md: 2
+}}>
+
+
+
+
+            <Box className="image-content">
+              <ChaniLogo />
+              <Typography variant="h5" className="welcome-title" sx={{
+                color: '#1B5E20',
+                textAlign: 'center',
+                marginTop: '20px',
+                fontWeight: 'bold',
+                textShadow: '1px 1px 2px rgba(255,255,255,0.8)'
+              }}>
+                ברוכים הבאים
+              </Typography>
+              <Typography className="welcome-text" sx={{
+                color: '#1B5E20',
+                textAlign: 'center',
+                marginTop: '10px',
+                textShadow: '1px 1px 1px rgba(255,255,255,0.6)'
+
               }}>
                 © {new Date().getFullYear()} קליניקת חני רוזנצוויג | כל הזכויות שמורות
               </Typography>
